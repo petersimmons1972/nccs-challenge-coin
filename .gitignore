@@ -2,3 +2,4 @@ __pycache__/
 *.pyc
 .pytest_cache/
 CLAUDE.md
+build/coin_reverse_test*.png
