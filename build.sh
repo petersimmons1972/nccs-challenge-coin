@@ -44,12 +44,19 @@ openscad -o "$BUILD_DIR/coin_top.png" \
     -D "COLOR=0" \
     "$SRC_DIR/coin.scad" 2>/dev/null
 
-echo "  Bottom view (coin-turn flip)..."
-openscad -o "$BUILD_DIR/coin_bottom.png" \
-    --camera=0,0,0,0,180,0,120 --projection=ortho \
+echo "  Reverse face view..."
+openscad -o "$BUILD_DIR/coin_reverse_raw.png" \
+    --camera=0,-2,2.5,168,0,0,130 --projection=perspective \
     --imgsize=800,800 \
     -D "COLOR=0" \
     "$SRC_DIR/coin.scad" 2>/dev/null
+# Rotate 180° so text reads correctly (perspective from below needs correction)
+python3 -c "
+from PIL import Image
+img = Image.open('$BUILD_DIR/coin_reverse_raw.png').rotate(180)
+img.save('$BUILD_DIR/coin_reverse.png')
+"
+rm -f "$BUILD_DIR/coin_reverse_raw.png"
 
 echo ""
 echo "=== Build Complete ==="

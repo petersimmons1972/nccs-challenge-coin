@@ -2,7 +2,3 @@ __pycache__/
 *.pyc
 .pytest_cache/
 CLAUDE.md
-# School logo SVGs contain school IP - not for public redistribution
-src/logo_diamond.svg
-src/logo_border.svg
-src/logo_letters.svg

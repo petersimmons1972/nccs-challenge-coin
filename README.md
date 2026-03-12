@@ -4,7 +4,7 @@ A 50mm, 4-color challenge coin for the **North Cobb Christian School 2026 Swim T
 
 | Obverse (Front) | Reverse (Back) |
 |---|---|
-| ![Obverse](build/coin_top.png) | ![Reverse](build/coin_bottom_preview.png) |
+| ![Obverse](build/coin_top.png) | ![Reverse](build/coin_reverse.png) |
 
 ---
 
@@ -146,14 +146,12 @@ The `.3mf` is built to Bambu's native spec:
 
 ## Adapting for Your School
 
-The school shield logo SVGs (`src/logo_diamond.svg`, `src/logo_border.svg`, `src/logo_letters.svg`) are not included in this repository — they contain the school's branding and are not ours to redistribute. To build from source:
+To customize this for a different school:
 
-1. Replace those three SVGs with your own school's logo shapes
+1. Replace the three logo SVGs in `src/` with your school's logo shapes
 2. Adjust `logo_scale` in `coin.scad` if needed (current: `1.18` for 96 DPI SVGs)
 3. Update the filament colors in `create_3mf.py` to match your school colors
 4. Update the reverse arc text in `coin.scad` (`reverse_white_2d()`)
-
-The ready-to-print files in `build/` are included and work as-is.
 
 The swimmer SVG (`src/ref_swimmer.svg`) is from [UXWing](https://uxwing.com/swimming-icon/) and is free for personal and commercial use.
 
